@@ -87,6 +87,8 @@ Notification.requestPermission(function(result) {
       registration.showNotification('Notification with ServiceWorker');
     });
   }
+});
+
   if (Notification.permission !== "granted") Notification.requestPermission();
   else {
     var notification = new Notification("Haasyl Notification", {
