@@ -80,6 +80,13 @@ function Salary(salary) {
 }
 // Notify on Successfull Submit
 function notifyMe(text) {
+navigator.serviceWorker.register('sw.js');
+Notification.requestPermission(function(result) {
+  if (result === 'granted') {
+    navigator.serviceWorker.ready.then(function(registration) {
+      registration.showNotification('Notification with ServiceWorker');
+    });
+  }
   if (Notification.permission !== "granted") Notification.requestPermission();
   else {
     var notification = new Notification("Haasyl Notification", {
