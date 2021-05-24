@@ -13,6 +13,7 @@ function formValidation(event) {
     Salary(salary)
   ) {
     document.getElementById("signupForm").reset();
+    alert('You are registered');
     notifyMe("You are registered");
   }
   return false;
