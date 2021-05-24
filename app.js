@@ -12,8 +12,8 @@ function formValidation(event) {
     PhoneNumber(pnumber) &&
     Salary(salary)
   ) {
-    notifyMe("You are registered");
     document.getElementById("signupForm").reset();
+    notifyMe("You are registered");
   }
   return false;
 }
@@ -80,18 +80,13 @@ function Salary(salary) {
 }
 // Notify on Successfull Submit
 function notifyMe(text) {
-navigator.serviceWorker.register('sw.js');
-Notification.requestPermission(function(result) {
-  if (result === 'granted') {
-    navigator.serviceWorker.ready.then(function(registration) {
-      registration.showNotification('Notification with ServiceWorker');
-    });
-  }
-});
-
-  if (Notification.permission !== "granted") Notification.requestPermission();
-  else {
-    var notification = new Notification("Haasyl Notification", {
+  navigator.serviceWorker.register("sw.js");
+  Notification.requestPermission(function (result) {
+    if (result === "granted") {
+      navigator.serviceWorker.ready.then(function (registration) {
+        registration.showNotification("Notification with ServiceWorker");
+      });
+          var notification = new Notification("Haasyl Notification", {
       body: text,
       requireInteraction: true,
     });
@@ -99,5 +94,8 @@ Notification.requestPermission(function(result) {
       alert("Form Submitted Successfully");
       event.preventDefault();
     };
-  }
+    }
+  });
+
+  if (Notification.permission !== "granted") Notification.requestPermission();
 }
