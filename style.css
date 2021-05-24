@@ -279,4 +279,31 @@ h2 {
   .side .phone .info .progress--circle {
     right: -3.5rem;
   }
+  .side .phone .info .row-phone .element {
+    font-size: 14px;
+    height: 64px;
+  }
 }
+
+/* iPhone 5/SE: */
+@media only screen and (max-device-width: 320px) and (orientation: portrait) {
+  .side .phone .info .progress--circle {
+    right: -2.2rem;
+  }
+  .side .phone .info .row-phone .element {
+    font-size: 12px;
+    height: 64px;
+  }
+}
+/* Galaxy fold */
+@media only screen and (max-device-width: 280px) and (orientation: portrait) {
+  .side .phone .info .progress--circle {
+    right: -1.2rem;
+  }
+  .side .phone .info .row-phone .element {
+    font-size: 9px;
+    height: 64px;
+  }
+}
+
+
